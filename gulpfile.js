@@ -21,9 +21,9 @@ var path = {
 	pugpages:	'./src/pug/_pages/**/*.pug',
 	pugpartials:'./src/pug/_partials/**/*.pug',
 	styles: 	'./src/sass/**/*{.sass,.scss,.css}',
-	cssvendor: 	'./src/sass/vendor/**/*{.sass,.scss,.css}',
+	// cssvendor: 	'./src/sass/vendor/**/*{.sass,.scss,.css}',
 	scripts: 	'./src/js/*.js',
-	jsvendor:	'./src/js/vendor/*.js',
+	// jsvendor:	'./src/js/vendor/*.js',
 	images: 	'./src/images/**/*{.jpg,.gif,.png,.svg,.eot,.ttf,.woff,.woff2,.ico}'
 }
 
@@ -79,7 +79,7 @@ function images() {
 // CSS task
 function css() {
 	return gulp
-	.src([path.cssvendor, 'src/sass/styles.sass'])
+	.src(path.styles)
 	.pipe(sass({outputStyle: 'compressed'}))
 	.on('error', function(err) { console.log('ERROR:', err.message); })
 	.pipe(concat('styles.css'))
@@ -90,7 +90,7 @@ function css() {
 // JS task
 function js() {
 	return gulp
-	.src([path.jsvendor, path.scripts])
+	.src(path.scripts)
 	.pipe(concat('scripts.js'))
 	// .pipe(uglify('scripts.js'))
 	.pipe(gulp.dest(local.scripts))

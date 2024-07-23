@@ -13,11 +13,5 @@ tmp/*
 temp
 index.html
 
-# Destination folder
-# dist
-
 # Nodejs Modules
 node_modules
-
-# NPM
-package-lock.json
