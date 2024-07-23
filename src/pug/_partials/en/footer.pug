@@ -1,0 +1,38 @@
+footer
+	.container
+		.row
+			h5.title.secondary-lighten get in touch...
+			
+			a.btn(href='https://www.github.com/romulobastos' rel='noreferrer' target='_blank' title='Github'): i.fab.fa-github
+			a.btn(href='https://www.linkedin.com/in/romulobastos/' rel='noreferrer' target='_blank' title='LinkedIn'): i.fab.fa-linkedin
+			a.btn(href='https://www.instagram.com/_romulobastos' rel='noreferrer' target='_blank' title='Instagram'): i.fab.fa-instagram
+			a.btn(href='https://www.twitter.com/_romulobastos' rel='noreferrer' target='_blank' title='Twitter'): i.fab.fa-twitter
+			a.btn(href='mailto: ola@romulobastos.com.br' rel='noreferrer' title='E-mail') #[span ola@romulobastos.com.br]
+		
+		.row
+			form.flex.dir-col.center(name="contact" method="POST" data-netlify="true")
+				
+				.flex.flex-three
+					label
+						p Name 
+						div: input(type="text" name="nome")
+					
+					label
+						p Email 
+						div: input(type="email" name="email")
+					
+					label
+						p Phone 
+						div: input(type="text" name="telefone")
+				
+				.flex
+					label
+						p Message 
+						div: textarea(name="mensagem")
+				
+				.flex.end
+					button.btn(type="submit") Send
+
+	.copyright
+		.row
+			p &copy; Since 2010 &mdash; Rio de Janeiro, Brazil

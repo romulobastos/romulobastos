@@ -1,0 +1,38 @@
+{
+  "name": "romulobastos",
+  "version": "1.0.0",
+  "description": "Portfólio Rômulo Bastos",
+  "main": "gulpfile.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rômulo Bastos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romulobastos/romulobastos/issues"
+  },
+  "homepage": "https://github.com/romulobastos/romulobastos#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.2",
+    "del": "^7.1.0",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^4.3.11",
+    "imagemin-mozjpeg": "^10.0.0",
+    "node-sass": "^9.0.0",
+    "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "imagemin-jpegtran": "^7.0.0"
+  }
+}

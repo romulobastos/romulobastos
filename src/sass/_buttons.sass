@@ -1,0 +1,85 @@
+// buttons
+.btn
+	position: relative
+	margin: 0 10px
+	padding: 1rem 2rem
+	display: inline-block
+	text-align: center
+	transition: all .1s ease
+	
+	// background: lighten($silver,5)
+	// +linear-gradient(to top left, $white, $silver)
+
+	border-color: $separator
+	border-style: dashed
+	border-width: 2px
+	+radius(6px)
+	i, svg
+		+transition(0.3s)
+		
+	
+	&:hover,
+	&:focus
+		color: $secondary-lighten
+		i, svg
+			+transform(scale(1.4) rotate(10deg))
+
+	&::after
+		content: ""
+		position: absolute
+		width: 0
+		bottom: 2px
+		left: 50%
+		margin: 0 auto
+		box-sizing: border-box
+		transition: all .25s ease
+	
+	&.btn-bordered
+		border: 3px solid	$primary-lighten
+	
+	&.btn-block
+		display: block
+
+	&.btn-primary
+		background-color: $primary
+		&:hover
+			background-color: $dark
+
+	&.btn-underline
+		&::after
+			border: 0
+			border-bottom-width: 1px
+			border-style: solid
+			border-color: $primary-lighten
+			border-color: rgba(255, 255, 255, 0.1)
+			z-index: 1
+
+			&:hover, &:focus
+				&::after
+					width: 100%
+					left: 0
+
+	&.btn-bullet
+		&::before
+			content: ""
+			background-color: #FFF
+			background-color: rgba(255, 255, 255, 0.2)
+			position: absolute
+			bottom: 0
+			left: 50%
+			width: 5px
+			height: 5px
+			margin: 0 0 0 -2px
+			display: block
+			z-index: 2
+			border-radius: 50%
+	
+	&.active
+		color: #0C3
+		&.btn-underline
+			&::after
+				border-color: #061
+
+		&.btn-bullet
+			::before
+				background-color: #0C3

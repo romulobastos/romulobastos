@@ -1,0 +1,30 @@
+doctype
+html(lang="en")
+	head
+		meta(charset='utf-8')
+		meta(name='description' content='Rômulo Bastos - Front-end developer and digital designer. HTML, CSS and Javascript specialist. Portfolio, blog and contact page.')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title &rarr; Rômulo Bastos
+		
+		link(rel='stylesheet' href='../site/assets/css/styles.css')
+		link(rel='shortcut icon' type="image/png" href='../site/assets/images/favicon-romulobastos.png')
+		
+		//- Global site tag (gtag.js) - Google Analytics
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-51706193-2")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-51706193-2');
+	body
+		.supbar
+			.container
+				include ../_partials/en/language
+
+		.main-wrapper
+			.main-cell
+				include ../_partials/en/header
+				include ../_pages/en/home
+				include ../_partials/en/footer
+
+		script(src="https://kit.fontawesome.com/6e569453ca.js" crossorigin="anonymous")

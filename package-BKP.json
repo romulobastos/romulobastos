@@ -1,0 +1,31 @@
+{
+	"name": "romulobastos.bitbucket.io",
+	"version": "1.0.0",
+	"description": "Portfólio Rômulo Bastos",
+	"main": "gulpfile.js",
+	"dependencies": {
+		"del": "^2.2.2",
+		"gulp": "^4.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-install": "^0.6.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-uglify": "^2.0.1"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.26.14",
+		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^3.1.1",
+		"gulp-pug": "^3.2.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^3.1.0",
+		"gulp-uglify": "^2.0.1",
+		"gulp-watch": "^4.3.11"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "gulp"
+	},
+	"author": "Rômulo Bastos",
+	"license": "ISC",
+	"homepage": "https://bitbucket.org/romulobastos/romulobastos.bitbucket.io/"
+}

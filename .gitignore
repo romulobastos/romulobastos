@@ -1,0 +1,23 @@
+# Default
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+*.log
+*.psd
+*.map
+.sass-cache
+.tmp
+tmp/*
+temp
+index.html
+
+# Destination folder
+# dist
+
+# Nodejs Modules
+node_modules
+
+# NPM
+package-lock.json

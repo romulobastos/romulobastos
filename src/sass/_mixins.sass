@@ -1,0 +1,117 @@
+// mixins
+/*----------------------------------------------------------------------------------------------------*/
+
+=p($val)
+	padding: $val
+=m($val)
+	margin: $val
+=w($val)
+	width: $val
+=transition($val...)
+	-webkit-transition: $val
+	-moz-transition: $val
+	-ms-transition: $val
+	-o-transition: $val
+	transition: $val
+=transition-delay($val...)
+	-webkit-transition-delay: $val
+	-moz-transition-delay: $val
+	-ms-transition-delay: $val
+	-o-transition-delay: $val
+	transition-delay: $val
+=transform($val...)
+	-webkit-transform: $val
+	-moz-transform: $val
+	-ms-transform: $val
+	-o-transform: $val
+	transform: $val
+=boxshadow($val)
+	-webkit-box-shadow: $val
+	-moz-box-shadow: $val
+	-ms-box-shadow: $val
+	-o-box-shadow: $val
+	box-shadow: $val
+=boxsizing($val)
+	-webkit-box-sizing: $val
+	-moz-box-sizing: $val
+	-ms-box-sizing: $val
+	-o-box-sizing: $val
+	box-sizing: $val
+=radius($val)
+	-webkit-border-radius: $val
+	-moz-border-radius: $val
+	-ms-border-radius: $val
+	-o-border-radius: $val
+	border-radius: $val
+=filter($val)
+	-webkit-filter: $val
+	-moz-filter: $val
+	-ms-filter: $val
+	-o-filter: $val
+	filter: $val
+=animation($val)
+	-webkit-animation: $val
+	-moz-animation: $val
+	-o-animation: $val
+	-ms-animation: $val
+	animation: $val
+=animationdelay($val)
+	-webkit-animation-delay: $val
+	-moz-animation-delay: $val
+	-o-animation-delay: $val
+	-ms-animation-delay: $val
+	animation-delay: $val
+
+=animation-go($name, $X1, $Y1, $S1)
+	@-webkit-keyframes #{$name}
+		0%
+			opacity: 0
+			-webkit-transform: translate(#{$X1}px, #{$Y1}px) scale($S1)
+		60%
+			-webkit-transform: translate(#{$X1 * 0.05 * -1}px, #{$Y1 * 0.05 * -1}px) scale(1)
+		80%
+			-webkit-transform: translate(#{$X1 * 0.02}px, #{$Y1 * 0.02}px) scale(1)
+		100%
+			opacity: 1
+			-webkit-transform: translate(0, 0) scale(1)
+	@keyframes #{$name}
+		0%
+			transform: translate(#{$X1}px, #{$Y1}px) scale($S1)
+			opacity: 0
+		60%
+			transform: translate(#{$X1 * 0.05 * -1}px, #{$Y1 * 0.05 * -1}px) scale(1)
+		80%
+			transform: translate(#{$X1 * 0.02}px, #{$Y1 * 0.02}px) scale(1)
+		100%
+			transform: translate(0, 0) scale(1)
+			opacity: 1
+			
+=textshadow($val)
+	text-shadow: $val
+
+@function is-direction($value)
+	$is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value)
+	$is-angle: type-of($value) == "number" and index("deg" "grad" "turn" "rad", unit($value))
+	@return $is-direction or $is-angle
+
+@function legacy-direction($value)
+	@if is-direction($value) == false
+		@warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction"
+	$conversion-map: (to top: bottom, to top right: bottom left, to right top: left bottom, to right: left, to bottom right: top left, to right bottom: left top, to bottom: top, to bottom left: top right, to left bottom: right top, to left: right, to left top: right bottom, to top left: bottom right)
+	@if map-has-key($conversion-map, $value)
+		@return map-get($conversion-map, $value)
+	@return 90deg - convert-angle($value, "deg")
+
+=linear-gradient($direction, $color-stops...)
+	@if is-direction($direction) == false
+		$color-stops: $direction, $color-stops
+		$direction: 180deg
+		background: nth(nth($color-stops, 1), 1)
+		background: -webkit-linear-gradient(legacy-direction($direction), $color-stops)
+		background: linear-gradient($direction, $color-stops)
+
+// clearfix
+%clearfix::after
+	content: ''
+	display: table
+	clear: both

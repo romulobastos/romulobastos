@@ -1,0 +1,497 @@
+// body
+body
+	background: $silver
+	+linear-gradient(to right, $white, $silver)
+
+// language
+.language-wrapper
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+
+	@media (max-width: 300px)
+		flex-direction: column
+
+	.language-box
+		margin: 0 2%
+		padding: 0
+		width: 48%
+		max-width: 250px
+		text-align: center
+		+boxsizing(border-box)
+		
+		.language-item
+			background: $white
+			margin: 0
+			padding: $gutter
+			+boxshadow(0 6px 10px 0px rgba($black, .05))
+			+boxsizing(border-box)
+			+radius(10px)
+
+			img
+				max-width: 60px
+				height: auto
+				display: block
+				margin: 0 auto
+
+.supbar
+	width: 100%
+	height: 30px
+	border-bottom: 1px solid $white
+	background: linear-gradient(to right, $primary-lighten, $primary)
+	
+	.language-wrapper
+		justify-content: flex-end
+		
+		.language-box
+			margin: 0 5px
+			width: auto
+			
+			.language-item
+				background: none
+				padding: 0 7px
+				height: 30px
+				overflow: hidden
+				+boxshadow(none)
+				+radius(0)
+
+				a
+					.text
+						display: none
+
+				img
+					margin-top: 2px
+					width: 25px
+					vertical-align: middle
+				
+				&.active
+					background: $white
+					background: rgba($white, .3)
+						
+
+.main-wrapper
+	width: 100%
+	min-height: 100vh
+
+	@media (max-width: 600px)
+		overflow: hidden
+
+hr
+	border-color: rgba(255, 255, 255, 0.1)
+	margin: 1rem 0 1rem
+	width: 100%
+	height: 150px
+	position: relative
+	
+	&.with-shadow
+		position: relative
+		border: 0
+		margin: 0
+		overflow: visible
+		
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+			width: 130%
+			height: 150px
+			left: -15%
+			bottom: 50px
+
+		&::before
+			border: 0
+			border-bottom: 10px solid $silver
+			// border-bottom: 10px solid $black
+			// background: rgba(20,100,200, 0.2)
+			+boxsizing(border-box)
+			+radius(50%)
+					
+		&::after
+			+boxshadow(0 26px 25px 0px rgba($black, .05))
+			// +boxshadow(0 26px 25px 0px rgba($black, .5))
+			+radius(50%)
+
+
+// animation
+// i = initial | e = end
+// name, i x, i y, i scale, e x, e y, e scale
+.to-down
+	@include animation-go(to-down,	0,	-50,	.9)
+.to-up
+	@include animation-go(to-up,		0,	50,		.9)
+.to-left
+	@include animation-go(to-left,	50,		0,	.9)
+.to-right
+	@include animation-go(to-right,	-50,	0,	.9)
+
+// header
+header
+	// background: $white
+	padding: calc($gutter*3) $gutter 0
+	overflow: hidden
+	
+	.logo
+		display: inline-block
+		
+		img
+			max-width: 100%
+			animation: to-down 1s ease 1
+			animation-fill-mode: forwards
+
+	.heading
+		display: inline-block
+		vertical-align: top
+		margin: 50px 30px 0
+		h1
+			position: relative
+			font-weight: bold
+			animation: to-right 1s ease-in-out 1
+			animation-fill-mode: forwards
+			animation-delay: .5s
+			opacity: 0
+			
+			span
+				position: absolute
+				bottom: 152%
+				left: 6%
+				background: $silver
+				padding: 10px 12px
+				font-size: 1.8rem
+				font-weight: 400
+				line-height: 2.4rem
+				opacity: 0
+				+radius(10px)
+				filter: drop-shadow(3px 2px 0px rgba($black, .2))
+				animation: to-up .9s ease-in-out 1
+				animation-fill-mode: forwards
+				animation-delay: 1.6s
+
+				i
+					margin-left: 10px
+
+				&::after
+					content: ''
+					position: absolute
+					top: 100%
+					left: 30%
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: 0 15px 15px 0
+					border-color: transparent $silver transparent transparent
+		
+		.position
+			animation: to-right 1s ease-in-out 1
+			animation-fill-mode: forwards
+			animation-delay: .7s
+			opacity: 0
+
+	nav
+		margin-top: 3rem
+	
+		ul
+			li
+				display: inline-block
+				margin-left: 1rem
+				text-transform: uppercase
+				
+				&:first-child
+					margin-left: 0
+
+// flex & grid
+.flex
+	display: flex
+	
+	&-center
+		justify-content: center
+		// align-items: center
+
+	.flex-item
+		// flex: 1
+		// background: #000
+
+	&.dir-col
+		flex-direction: column
+	
+	&.dir-row
+		flex-direction: row
+	
+	&.end
+		justify-content: flex-end
+
+.grid
+	display: grid
+
+// mainbody
+.main
+	padding: 5rem 0 0
+	
+	.title
+		margin-bottom: $gutter
+
+	.grid
+		grid-template: "wel fac" "job art"
+		grid-gap: $gutter
+		margin-bottom: $gutter
+		
+		&-item
+			// background: $white
+			padding: $gutter
+			// border: 3px solid $primary
+			// +radius(10px)
+			
+			&.welcome
+				grid-area: wel
+			&.facts
+				grid-area: fac
+			&.jobs
+				grid-area: job
+			&.art
+				grid-area: art
+				
+				padding: 0
+				display: flex
+				position: relative
+
+				.image
+					width: 100%
+					height: 100%
+					border-radius: 10px 50px 50px 50px
+					transition: all 1s
+				.image
+					background-size: cover
+					background-position: top left -100px
+					background-repeat: no-repeat
+					filter: grayscale(50%)
+					opacity: .9
+				.mask
+					position: absolute
+					background: $silver
+					opacity: .3
+				&:hover
+					.image, .mask
+						border-radius: 10px 20px 20px 20px
+					.image
+						filter: grayscale(0)
+						opacity: 1
+						background-position: top center
+					.mask
+						opacity: 0.1
+
+			&.with-col-divisor
+				position: relative
+				&:after
+					content: ''
+					position: absolute
+					top: 0
+					left: 100%
+					margin-left: calc(calc($gutter/2))
+					width: 1px
+					height: 100%
+					border-right: $separator-size solid $separator
+			&.with-row-divisor
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					left: 0
+					bottom: 100%
+					margin-bottom: calc(calc($gutter/2))
+					width: 100%
+					height: 1px
+					border-top: $separator-size solid $separator
+					border-radius: 100px
+
+		@media (max-width: 960px)
+			grid-template: "wel" "fac" "job" "art"
+			grid-gap: 0
+			.with-col-divisor,
+			.with-row-divisor
+				&:before,
+				&:after
+					display: none
+			.art
+				overflow: hidden
+				width: auto
+				.image
+					width: 100%
+					height: 100vw
+					background-position: top center
+					margin: calc($gutter/3) calc($gutter/3) $gutter
+			.grid-item
+				padding-top: calc($gutter*1.5)
+				padding-left: calc(calc($gutter/2))
+				padding-right: calc(calc($gutter/2))
+				border-top: $separator-size dashed $separator
+			
+			.grid-item:first-child
+				border: 0
+
+	nav
+		ul
+			margin: 1em 0
+			
+			li
+				display: block
+				
+				a
+					.list-icon
+						width: 1em
+						font-size: .8em
+						display: inline-block
+						text-align: center
+						margin-left: $gutter
+						margin-right: calc(calc($gutter/2))
+						
+						@media (max-width: 960px)
+							margin-left: calc(calc($gutter/2))
+							margin-right: calc($gutter/3)
+							
+						svg
+							+transition(all linear 0.2s)
+							color: $gray
+							fill: $gray
+					
+					&:hover,
+					&:focus
+						.list-icon, .list-icon svg
+							color: $secondary-lighten
+							fill: $secondary-lighten
+	
+	.category
+		&::before
+			content: '// '
+			color: $secondary-lighten
+	
+// footer
+footer
+	background: $white
+	padding: $gutter 0 0
+	text-align: center
+	.title
+		margin: 30px
+	.btn
+		font-size: 2.0rem
+		min-width: 20px
+		min-height: 20px
+		line-height: 1.6rem
+		margin: 5px 2px
+		padding: 20px
+		display: inline-block
+		+radius(40px)
+		span
+			font-size: 1.6rem
+
+	.flex-three
+		flex-wrap: wrap
+		label
+			flex: 1
+
+	// contact form
+	form
+		text-align: left
+		label
+			margin: 0 10px
+			width: 100%
+		input, select, textarea
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+			margin: 0 0 $gutter
+			padding: calc($gutter/2) calc($gutter/2)
+			border-color: $separator
+			border-style: dashed
+			border-width: 2px
+			min-height: 64px
+			width: 100%
+			font-size: 1.6rem
+			+boxsizing(border-box)
+			+radius(32px)
+			+transition(.3s all)
+			&:hover, &:focus
+				outline: none
+			&:hover
+				border-color: $primary-lighten
+			&:focus
+				border-color: $primary
+		textarea
+			height: calc($gutter*6)
+		button.btn
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+			background: $separator
+			color: $dark
+			padding-left: $gutter
+			padding-right: $gutter
+			text-transform: uppercase
+			border: 0
+			font-weight: 700
+			font-size: 1.8rem
+			letter-spacing: 2px
+			cursor: pointer
+			+transition(.3s all)
+			
+			&:hover,
+			&:focus
+				background: $dark
+				color: $white
+
+	.copyright
+		padding: $gutter 0
+		background: $dark
+		p
+			color: $white
+
+@media (max-width: 800px)
+	header
+		text-align: center
+		.flex
+			flex-direction: column
+		.logo
+			margin: 0 auto
+		.heading
+			margin-top: calc($gutter*2)
+			h1 > span
+				left: 25%
+	
+	footer
+		.flex-three
+			label
+				flex: 1 1 auto
+
+@media (max-width: 600px)
+	html, body
+		font-size: 8px
+		letter-spacing: 0.5px
+	
+	header
+		padding: calc($gutter*3) 0 0
+		text-align: center
+		.logo
+			margin: 0 auto
+
+	.main
+		padding-top: 0
+		.bio
+			ul, ol
+				li
+					margin: 10px 0
+	
+	footer
+		.title
+			font-size: 2.4rem
+		.btn
+			font-size: 2.2rem
+			line-height: 2rem
+			span
+				font-size: 2.0rem
+
+@media (max-width: 480px)
+	header
+		.heading
+			margin-left: 0
+			margin-right: 0
+			h2
+				font-size: 2rem

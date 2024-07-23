@@ -1,0 +1,22 @@
+.container
+	.main
+		.grid
+			.grid-item.welcome.with-col-divisor
+				h3.title .bem-vindo { ao-meu: site; }
+				p Aqui você pode aprimorar a performance de sua marca, expandir seu níveis de comunicação e gerar resultados para o seu negócio.
+				p Vamos conversar sobre as suas ideias e projetos?
+			
+			.grid-item.facts
+				h3.title .fatos { sobre: mim; }
+				ol
+					li Ciclista de final de semana. #[span.list-icon: i.fas.fa-biking]
+					
+					li Gamer nas horas vagas. #[span.list-icon: i.fas.fa-headset]
+
+					li Sempre em busca de conhecimento. #[a.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') Veja os cursos].
+			
+			.grid-item.jobs.with-col-divisor.with-row-divisor
+				include includes/my-jobs
+
+			.grid-item.art.with-row-divisor
+				.image(style='background-image:url(/site/assets/images/profile-picture.jpg)')
