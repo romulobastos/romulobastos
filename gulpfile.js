@@ -22,7 +22,7 @@ var path = {
 	pugpartials:'./src/pug/_partials/**/*.pug',
 	styles: 	'./src/sass/**/*{.sass,.scss,.css}',
 	// cssvendor: 	'./src/sass/vendor/**/*{.sass,.scss,.css}',
-	scripts: 	'./src/js/*.js',
+	// scripts: 	'./src/js/*.js',
 	// jsvendor:	'./src/js/vendor/*.js',
 	images: 	'./src/images/**/*{.jpg,.gif,.png,.svg,.eot,.ttf,.woff,.woff2,.ico}'
 }
@@ -32,7 +32,7 @@ var local = {
 	root:		'./',
 	dest:		'./site',
 	styles:		'./site/assets/css/',
-	scripts:	'./site/assets/js/',
+	// scripts:	'./site/assets/js/',
 	images:		'./site/assets/images/',
 }
 
@@ -111,7 +111,7 @@ function html() {
 // Watch files
 function watchFiles() {
 	gulp.watch(path.styles, css);
-	gulp.watch(path.scripts, js);
+	// gulp.watch(path.scripts, js);
 	gulp.watch(path.images, images);
 	gulp.watch(path.pug, html);
 }
