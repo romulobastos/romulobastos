@@ -62,16 +62,11 @@ function clean() {
 function images() {
 	return gulp
 	.src(path.images)
-	.pipe(imagemin([		
-		gifsicle({interlaced: true}),
-		mozjpeg({quality: 100, progressive: false}),
-		optipng({optimizationLevel: 5}),
-		svgo({
-			plugins: [ 
-				{ removeUselessDefs: false },
-				{ cleanupIDs: false}
-			]
-		})
+	.pipe(imagemin([
+		imagemin.gifsicle({interlaced: true}),
+		imagemin.mozjpeg({progressive: true}),
+		imagemin.optipng({optimizationLevel: 5}),
+		imagemin.svgo({plugins: [{removeViewBox: false}]})
 	]))
 	.pipe(gulp.dest(local.images))
 }
@@ -88,14 +83,14 @@ function css() {
 }
 
 // JS task
-function js() {
-	return gulp
-	.src(path.scripts)
-	.pipe(concat('scripts.js'))
-	// .pipe(uglify('scripts.js'))
-	.pipe(gulp.dest(local.scripts))
-	.pipe(browsersync.stream());
-}
+// function js() {
+// 	return gulp
+// 	.src(path.scripts)
+// 	.pipe(concat('scripts.js'))
+// 	// .pipe(uglify('scripts.js'))
+// 	.pipe(gulp.dest(local.scripts))
+// 	.pipe(browsersync.stream());
+// }
 
 // HTML task
 function html() {
@@ -117,13 +112,13 @@ function watchFiles() {
 }
 
 // Complex tasks
-const build = gulp.series(clean, gulp.parallel(css, images, js, html));
+const build = gulp.series(clean, gulp.parallel(css, images, html));
 const watch = gulp.parallel(watchFiles, browserSyncReload, browserSync);
 
 // Export tasks
 export {images};
 export {css};
-export {js};
+// export {js};
 export {html};
 export {clean};
 export {build};
