@@ -9,13 +9,8 @@ html(lang="en")
 		link(rel='stylesheet' href='../site/assets/css/styles.css')
 		link(rel='shortcut icon' type="image/png" href='/img/logo-romulobastos.svg')
 		
-		//- Global site tag (gtag.js) - Google Analytics
-		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-51706193-2")
-		script.
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-51706193-2');
+		include ../_partials/ga4
+
 	body
 		.supbar
 			.container
