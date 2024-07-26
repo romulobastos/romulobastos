@@ -249,7 +249,8 @@ header
 				grid-area: job
 			&.art
 				grid-area: art
-				
+				// background: $primary
+				border-radius: 16px				
 				padding: 0
 				display: flex
 				position: relative
@@ -257,27 +258,19 @@ header
 				.image
 					width: 100%
 					height: 100%
-					border-radius: 10px 50px 50px 50px
-					transition: all 1s
-				.image
+					border-radius: 32px
+					transition: all 0.6s
 					background-size: cover
-					background-position: top center -100px
+					background-position: top center
 					background-repeat: no-repeat
-					filter: grayscale(50%)
-					opacity: .9
-				.mask
-					position: absolute
-					background: $silver
-					opacity: .3
+					filter: contrast(0.8) drop-shadow(0 0 16px rgba($primary, 30%))
+					transform: scale(0.9)
+					// border: 1px solid $primary
 				&:hover
-					.image, .mask
-						border-radius: 10px 20px 20px 20px
 					.image
-						filter: grayscale(0)
-						opacity: 1
-						background-position: top center
-					.mask
-						opacity: 0.1
+						filter: contrast(1) drop-shadow(0 0 160px $primary)
+						transform: scale(1)
+						border-radius: 16px
 
 			&.with-col-divisor
 				position: relative
@@ -355,6 +348,7 @@ header
 					
 					&:hover,
 					&:focus
+						color: $secondary-lighten
 						.list-icon, .list-icon svg
 							color: $secondary-lighten
 							fill: $secondary-lighten
