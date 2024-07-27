@@ -1,23 +1,24 @@
 // buttons
 .btn
 	position: relative
-	margin: 0 10px
+	margin: 0
 	padding: 1rem 2rem
 	display: inline-block
 	text-align: center
-	transition: all .1s ease
-	
-	// background: lighten($silver,5)
-	// +linear-gradient(to top left, $white, $silver)
-
+	transition: all .6s ease
 	border-color: $separator
-	border-style: dashed
-	border-width: 2px
-	+radius(6px)
+	+radius(calc($gutter/6))
+	
 	i, svg
 		+transition(0.3s)
-		
 	
+	&.dashed
+		border-style: dashed
+		border-width: 2px
+		&:hover, &:focus
+			color: $secondary-lighten
+			border-color: $gray
+
 	&:hover,
 	&:focus
 		color: $secondary-lighten
@@ -32,18 +33,20 @@
 		left: 50%
 		margin: 0 auto
 		box-sizing: border-box
-		transition: all .25s ease
+		transition: all .3s ease
 	
 	&.btn-bordered
 		border: 3px solid	$primary-lighten
-	
+		
 	&.btn-block
 		display: block
 
 	&.btn-primary
-		background-color: $primary
+		background: $secondary linear-gradient(90deg, $secondary-lighten, $secondary)
+		color: $white
+
 		&:hover
-			background-color: $dark
+			background: lighten($secondary, 10%) linear-gradient(90deg, lighten($secondary-lighten, 10%), lighten($secondary, 10%))
 
 	&.btn-underline
 		&::after

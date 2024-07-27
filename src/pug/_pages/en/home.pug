@@ -2,18 +2,41 @@
 	.main
 		.grid
 			.grid-item.welcome.with-col-divisor
-				h3.title .welcome { to-my: page; }
-				p Here you can improve your brand performance, expand your communication levels and generate results for your business.
-				p Let's talk more about your ideas and projects?
-			
+				h3.title About me
+				p Tech lead at #[a.bold.underlined(href="https://portal.ipiranga" target="_blank") Ipiranga] e desenvolvedor web desde 2010.
+				p I create and keep websites, apps and portals. I bring solutions that improve the digital experience and bring real benefits.
+				p Do you want to increase your brand's performance on the internet and expand your communication levels?
+				a.btn.btn-primary.bold.mt-5(href="#contato")
+					i.mr-4.far.fa-comments
+					| Let's start a conversation
+
 			.grid-item.facts
-				h3.title .facts { about: me; }
-				ol
-					li Cyclist on weekends. #[span.list-icon: i.fas.fa-biking]
-					
-					li Gamer in spare time. #[span.list-icon: i.fas.fa-headset]
-					
-					li Always looking for knowledge. #[a.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') Completed courses].
+				h3.title Fun facts
+				ul
+					li.flex.gap-1
+						span.list-icon
+							i.fas.fa-biking
+						| I like cycling and practicing #[abbr(title="Mountain Bike") MTB]
+					li.flex.gap-1
+						span.list-icon
+							i.fa.fa-pencil
+						| I write with the right hand...
+					li.flex.gap-1
+						span.list-icon
+							i.fas.fa-futbol
+						| ...but I kick with the left foot
+					li.flex.gap-1
+						span.list-icon
+							i.fa.fa-twitch
+						| I play and watch #[abbr(title="Counter Strike") CS] in my free time
+					li.flex.gap-1
+						span.list-icon
+							i.fa.fa-images
+						| I was an event photographer
+					li.flex.gap-1
+						span.list-icon
+							i.far.fa-star
+						| See some #[a.bold.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') concluded courses]
 			
 			.grid-item.jobs.with-col-divisor.with-row-divisor
 				include includes/my-jobs

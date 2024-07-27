@@ -102,6 +102,7 @@
 		@return map-get($conversion-map, $value)
 	@return 90deg - convert-angle($value, "deg")
 
+// +linear-gradient(to top bottom, $primary, $secondary)
 =linear-gradient($direction, $color-stops...)
 	@if is-direction($direction) == false
 		$color-stops: $direction, $color-stops

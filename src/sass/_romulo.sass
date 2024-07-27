@@ -7,7 +7,7 @@ body
 .language-wrapper
 	display: flex
 	flex-direction: row
-	justify-content: center
+	justify-content: flex-start
 	align-items: center
 
 	@media (max-width: 300px)
@@ -38,24 +38,21 @@ body
 .supbar
 	width: 100%
 	height: 30px
-	border-bottom: 1px solid $white
-	background: linear-gradient(to right, $primary-lighten, $primary)
-	
+	margin: 0
 	.language-wrapper
-		justify-content: flex-end
-		
+
 		.language-box
-			margin: 0 5px
+			margin: 0
 			width: auto
 			
 			.language-item
-				background: none
-				padding: 0 7px
+				padding: 0 4px
 				height: 30px
 				overflow: hidden
 				+boxshadow(none)
 				+radius(0)
-
+				opacity: 0.5
+				filter: saturate(50%)
 				a
 					.text
 						display: none
@@ -66,8 +63,8 @@ body
 					vertical-align: middle
 				
 				&.active
-					background: $white
-					background: rgba($white, .3)
+					opacity: 1
+					filter: saturate(100%)
 						
 
 .main-wrapper
@@ -79,9 +76,8 @@ body
 
 hr
 	border-color: rgba(255, 255, 255, 0.1)
-	margin: 1rem 0 1rem
 	width: 100%
-	height: 150px
+	height: calc($gutter*4)
 	position: relative
 	
 	&.with-shadow
@@ -94,28 +90,25 @@ hr
 		&::after
 			content: ''
 			position: absolute
-			width: 130%
-			height: 150px
-			left: -15%
+			width: 130vw
+			height: 80px
+			left: -15vw
 			bottom: 50px
 
 		&::before
 			border: 0
-			border-bottom: 10px solid $silver
-			// border-bottom: 10px solid $black
-			// background: rgba(20,100,200, 0.2)
 			+boxsizing(border-box)
 			+radius(50%)
 					
 		&::after
 			+boxshadow(0 26px 25px 0px rgba($black, .05))
-			// +boxshadow(0 26px 25px 0px rgba($black, .5))
-			+radius(50%)
-
+			+radius(100%)
 
 // animation
 // i = initial | e = end
 // name, i x, i y, i scale, e x, e y, e scale
+.marker
+	@include animation-go(marker,		0,	-100,	1)
 .to-down
 	@include animation-go(to-down,	0,	-50,	.9)
 .to-up
@@ -125,10 +118,23 @@ hr
 .to-right
 	@include animation-go(to-right,	-50,	0,	.9)
 
+// page marker
+.page-marker
+	position: relative
+	animation: marker 1.2s ease-in-out 1
+	animation-fill-mode: forwards
+	animation-delay: .3s
+	opacity: 0
+	
+	img
+		position: absolute
+		top: -31px
+		z-index: 1
+
 // header
 header
 	// background: $white
-	padding: calc($gutter*3) $gutter 0
+	padding: $gutter $gutter 0
 	overflow: hidden
 	
 	.logo
@@ -140,12 +146,9 @@ header
 			animation-fill-mode: forwards
 
 	.heading
-		display: inline-block
-		vertical-align: top
-		margin: 50px 30px 0
 		h1
 			position: relative
-			font-weight: bold
+			font-weight: 900
 			animation: to-right 1s ease-in-out 1
 			animation-fill-mode: forwards
 			animation-delay: .5s
@@ -199,6 +202,73 @@ header
 				&:first-child
 					margin-left: 0
 
+// spacing
+.m-0
+	margin: 0
+.m-1
+	margin: calc($gutter/6)
+.m-2
+	margin: calc($gutter/4)
+.m-3
+	margin: calc($gutter/3)
+.m-4
+	margin: calc($gutter/2)
+.m-5
+	margin: calc($gutter/1)
+
+.mt-0
+	margin-top: 0
+.mt-1
+	margin-top: calc($gutter/6)
+.mt-2
+	margin-top: calc($gutter/4)
+.mt-3
+	margin-top: calc($gutter/3)
+.mt-4
+	margin-top: calc($gutter/2)
+.mt-5
+	margin-top: calc($gutter/1)
+
+.ml-0
+	margin-left: 0
+.ml-1
+	margin-left: calc($gutter/6)
+.ml-2
+	margin-left: calc($gutter/4)
+.ml-3
+	margin-left: calc($gutter/3)
+.ml-4
+	margin-left: calc($gutter/2)
+.ml-5
+	margin-left: calc($gutter/1)
+
+.mr-0
+	margin-right: 0
+.mr-1
+	margin-right: calc($gutter/6)
+.mr-2
+	margin-right: calc($gutter/4)
+.mr-3
+	margin-right: calc($gutter/3)
+.mr-4
+	margin-right: calc($gutter/2)
+.mr-5
+	margin-right: calc($gutter/1)
+
+.mb-0
+	margin-bottom: 0
+.mb-1
+	margin-bottom: calc($gutter/6)
+.mb-2
+	margin-bottom: calc($gutter/4)
+.mb-3
+	margin-bottom: calc($gutter/3)
+.mb-4
+	margin-bottom: calc($gutter/2)
+.mb-5
+	margin-bottom: calc($gutter/1)
+	
+
 // flex & grid
 .flex
 	display: flex
@@ -217,15 +287,58 @@ header
 	&.dir-row
 		flex-direction: row
 	
+	&.center
+		justify-content: center
+	
+	&.start
+		justify-content: flex-start
+	
 	&.end
 		justify-content: flex-end
+
+	&.items-center
+		align-items: center
+	
+	&.items-start
+		align-items: start
+
+	&.items-end
+		align-items: end
+
+	&.gap-1
+		gap: calc($gutter/6)
+	&.gap-2
+		gap: calc($gutter/4)
+	&.gap-3
+		gap: calc($gutter/3)
+	&.gap-4
+		gap: calc($gutter/2)
+	&.gap-5
+		gap: calc($gutter/1)
 
 .grid
 	display: grid
 
+.list-icon
+	width: 1em
+	font-size: .8em
+	display: inline-block
+	text-align: center
+	margin-left: $gutter
+	margin-right: calc(calc($gutter/2))
+	
+	@media (max-width: 960px)
+		margin-left: calc(calc($gutter/2))
+		margin-right: calc($gutter/3)
+		
+	svg
+		+transition(all linear 0.2s)
+		color: $gray
+		fill: $gray
+
 // mainbody
 .main
-	padding: 5rem 0 0
+	padding: 0
 	
 	.title
 		margin-bottom: $gutter
@@ -240,17 +353,25 @@ header
 			padding: $gutter
 			// border: 3px solid $primary
 			// +radius(10px)
+
+			animation: to-up 1.2s ease-in-out 1
+			animation-fill-mode: forwards
+			opacity: 0
 			
 			&.welcome
 				grid-area: wel
+				animation-delay: 0.8s
 			&.facts
 				grid-area: fac
+				animation-delay: 1.2s
 			&.jobs
 				grid-area: job
+				animation-delay: 1.6s
 			&.art
 				grid-area: art
+				animation-delay: 2s
 				// background: $primary
-				border-radius: 16px				
+				// border-radius: 16px
 				padding: 0
 				display: flex
 				position: relative
@@ -259,16 +380,16 @@ header
 					width: 100%
 					height: 100%
 					border-radius: 32px
-					transition: all 0.6s
+					transition: all 0.9s
 					background-size: cover
 					background-position: top center
 					background-repeat: no-repeat
-					filter: contrast(0.8) drop-shadow(0 0 16px rgba($primary, 30%))
+					filter: grayscale(15%) brightness(85%) drop-shadow(0 0 16px rgba($primary, 30%))
 					transform: scale(0.9)
 					// border: 1px solid $primary
 				&:hover
 					.image
-						filter: contrast(1) drop-shadow(0 0 160px $primary)
+						filter: grayscale(0%) brightness(100%) drop-shadow(0 0 160px $primary)
 						transform: scale(1)
 						border-radius: 16px
 
@@ -305,7 +426,6 @@ header
 				&:after
 					display: none
 			.art
-				overflow: hidden
 				width: auto
 				.image
 					width: 100%
@@ -313,10 +433,9 @@ header
 					background-position: top center
 					margin: calc($gutter/3) calc($gutter/3) $gutter
 			.grid-item
-				padding-top: calc($gutter*1.5)
-				padding-left: calc(calc($gutter/2))
-				padding-right: calc(calc($gutter/2))
-				border-top: $separator-size dashed $separator
+				padding-left: 0
+				padding-right: 0
+				border-top: $separator-size solid $separator
 			
 			.grid-item:first-child
 				border: 0
@@ -329,23 +448,6 @@ header
 				display: block
 				
 				a
-					.list-icon
-						width: 1em
-						font-size: .8em
-						display: inline-block
-						text-align: center
-						margin-left: $gutter
-						margin-right: calc(calc($gutter/2))
-						
-						@media (max-width: 960px)
-							margin-left: calc(calc($gutter/2))
-							margin-right: calc($gutter/3)
-							
-						svg
-							+transition(all linear 0.2s)
-							color: $gray
-							fill: $gray
-					
 					&:hover,
 					&:focus
 						color: $secondary-lighten
@@ -370,71 +472,63 @@ footer
 		min-width: 20px
 		min-height: 20px
 		line-height: 1.6rem
-		margin: 5px 2px
+		margin: 0px calc($gutter/6)
 		padding: 20px
 		display: inline-block
-		+radius(40px)
+		+radius(calc($gutter/6))
+		transition: all ease 1s
 		span
 			font-size: 1.6rem
 
-	.flex-three
+	.flex-wrap
 		flex-wrap: wrap
 		label
 			flex: 1
+			&.x2
+				flex: 2.1
 
 	// contact form
 	form
 		text-align: left
 		label
-			margin: 0 10px
 			width: 100%
+			p
+				margin: 0
 		input, select, textarea
 			-webkit-appearance: none
 			-moz-appearance: none
 			appearance: none
-			margin: 0 0 $gutter
+			margin: 0
 			padding: calc($gutter/2) calc($gutter/2)
 			border-color: $separator
-			border-style: dashed
+			border-style: solid
 			border-width: 2px
 			min-height: 64px
 			width: 100%
 			font-size: 1.6rem
 			+boxsizing(border-box)
-			+radius(32px)
+			+radius(calc($gutter/6))
 			+transition(.3s all)
 			&:hover, &:focus
 				outline: none
 			&:hover
-				border-color: $primary-lighten
+				border-color: $gray
 			&:focus
-				border-color: $primary
+				border-color: $secondary-lighten
 		textarea
 			height: calc($gutter*6)
 		button.btn
 			-webkit-appearance: none
 			-moz-appearance: none
 			appearance: none
-			background: $separator
-			color: $dark
-			padding-left: $gutter
-			padding-right: $gutter
-			text-transform: uppercase
 			border: 0
-			font-weight: 700
-			font-size: 1.8rem
-			letter-spacing: 2px
 			cursor: pointer
-			+transition(.3s all)
-			
-			&:hover,
-			&:focus
-				background: $dark
-				color: $white
+			+transition(.6s all)
 
 	.copyright
 		padding: $gutter 0
-		background: $dark
+		margin-top: calc($gutter*4)
+		background: linear-gradient(90deg, $dark, $secondary-lighten)
 		p
 			color: $white
 
@@ -451,7 +545,7 @@ footer
 				left: 25%
 	
 	footer
-		.flex-three
+		.flex-wrap
 			label
 				flex: 1 1 auto
 
@@ -461,7 +555,7 @@ footer
 		letter-spacing: 0.5px
 	
 	header
-		padding: calc($gutter*3) 0 0
+		padding: calc($gutter) 0 0
 		text-align: center
 		.logo
 			margin: 0 auto
@@ -474,8 +568,6 @@ footer
 					margin: 10px 0
 	
 	footer
-		.title
-			font-size: 2.4rem
 		.btn
 			font-size: 2.2rem
 			line-height: 2rem

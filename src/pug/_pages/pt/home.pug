@@ -2,18 +2,41 @@
 	.main
 		.grid
 			.grid-item.welcome.with-col-divisor
-				h3.title .bem-vindo { ao-meu: site; }
-				p Aqui você pode aprimorar a performance de sua marca, expandir seu níveis de comunicação e gerar resultados para o seu negócio.
-				p Vamos conversar sobre as suas ideias e projetos?
+				h3.title Sobre mim
+				p Líder técnico na #[a.bold.underlined(href="https://portal.ipiranga" target="_blank") Ipiranga] e desenvolvedor web desde 2010.
+				p Crio e evoluo sites, apps e portais. Penso em soluções que aprimoram a experiência digital e trazem benefícios reais.
+				p Quer aumentar a performance da sua marca na internet e expandir seus níveis de comunicação?
+				a.btn.btn-primary.bold.mt-5(href="#contato")
+					i.mr-4.far.fa-comments
+					| Entre em contato
 			
 			.grid-item.facts
-				h3.title .fatos { sobre: mim; }
-				ol
-					li Ciclista de final de semana. #[span.list-icon: i.fas.fa-biking]
-					
-					li Gamer nas horas vagas. #[span.list-icon: i.fas.fa-headset]
-
-					li Sempre em busca de conhecimento. #[a.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') Veja os cursos].
+				h3.title Curiosidades
+				ul
+					li.flex.gap-1
+						span.list-icon
+							i.fas.fa-biking
+						| Gosto de pedalar e praticar #[abbr(title="Mountain Bike") MTB]
+					li.flex.gap-1
+						span.list-icon
+							i.fa.fa-pencil
+						| Escrevo com a direita...
+					li.flex.gap-1
+						span.list-icon
+							i.fas.fa-futbol
+						| ...mas chuto com a esquerda
+					li.flex.gap-1
+						span.list-icon
+							i.fa.fa-twitch
+						| Jogo e assisto #[abbr(title="Counter Strike") CS] nas horas vagas
+					li.flex.gap-1
+						span.list-icon
+							i.fa.fa-images
+						| Já fui fotógrafo de eventos
+					li.flex.gap-1
+						span.list-icon
+							i.far.fa-star
+						| Veja alguns dos #[a.bold.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') cursos que concluí]
 			
 			.grid-item.jobs.with-col-divisor.with-row-divisor
 				include includes/my-jobs

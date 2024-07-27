@@ -1,18 +1,19 @@
-footer
+footer#contact
 	.container
 		.row
-			h5.title.secondary-lighten get in touch...
+			h3.title.center Get in touch
 			
-			a.btn(href='https://www.github.com/romulobastos' rel='noreferrer' target='_blank' title='Github'): i.fab.fa-github
-			a.btn(href='https://www.linkedin.com/in/romulobastos/' rel='noreferrer' target='_blank' title='LinkedIn'): i.fab.fa-linkedin
-			a.btn(href='https://www.instagram.com/_romulobastos' rel='noreferrer' target='_blank' title='Instagram'): i.fab.fa-instagram
-			a.btn(href='https://www.twitter.com/_romulobastos' rel='noreferrer' target='_blank' title='Twitter'): i.fab.fa-twitter
-			a.btn(href='mailto: ola@romulobastos.com.br' rel='noreferrer' title='E-mail') #[span ola@romulobastos.com.br]
+			.flex.center.flex-wrap.gap-4
+				a.btn.underlined(href='https://www.github.com/romulobastos' rel='noreferrer' target='_blank' title='Github'): i.fab.fa-github
+				a.btn.underlined(href='https://www.linkedin.com/in/romulobastos/' rel='noreferrer' target='_blank' title='LinkedIn'): i.fab.fa-linkedin
+				a.btn.underlined(href='https://www.instagram.com/_romulobastos' rel='noreferrer' target='_blank' title='Instagram'): i.fab.fa-instagram
+				a.btn.underlined(href='https://www.twitter.com/_romulobastos' rel='noreferrer' target='_blank' title='Twitter'): i.fab.fa-twitter
+				a.btn.underlined.bold(href='mailto: contato@romulobastos.com.br' rel='noreferrer' title='E-mail') #[span contato@romulobastos.com.br]
 		
 		.row
-			form.flex.dir-col.center(name="contact" method="POST" data-netlify="true")
+			form.flex.gap-5.dir-col.center(name="contact" method="POST" data-netlify="true")
 				
-				.flex.flex-three
+				.flex.gap-5.flex-wrap
 					label
 						p Name 
 						div: input(type="text" name="nome")
@@ -25,14 +26,17 @@ footer
 						p Phone 
 						div: input(type="text" name="telefone")
 				
-				.flex
+				.flex.gap-5.flex-wrap.items-end
+					label.x2
+						p Message
+						div: textarea.flex.mb-0(name="mensagem" maxlength="300")
+					
 					label
-						p Message 
-						div: textarea(name="mensagem")
-				
-				.flex.end
-					button.btn(type="submit") Send
+						div
+							button.btn.btn-primary.bold.mt-5(type="submit")
+								i.mr-4.fa.fa-paper-plane-o
+								| Send message
 
 	.copyright
 		.row
-			p &copy; Since 2010 &mdash; Rio de Janeiro, Brazil
+			p Rômulo Bastos &copy; Since 2010 &mdash; Rio de Janeiro, Brazil

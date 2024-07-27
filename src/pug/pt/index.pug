@@ -7,14 +7,15 @@ html(lang="pt-br")
 		title Rômulo Bastos -> Front-end Dev | UI Design | Branding
 		
 		link(rel='stylesheet' href='../site/assets/css/styles.css')
-		link(rel='shortcut icon' type="image/png" href='/img/logo-romulobastos.svg')
+		link(rel='shortcut icon' type="image/png" href='../site/assets/images/favicon.svg')
 		
 		include ../_partials/ga4
+
 	body
 		.supbar
-			.container
-				include ../_partials/pt/language
-		
+			include ../_partials/pt/page-marker
+			include ../_partials/pt/language
+			
 		.main-wrapper
 			.main-cell
 				include ../_partials/pt/header
