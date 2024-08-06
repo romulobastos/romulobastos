@@ -11,7 +11,7 @@ footer#contact
 				a.btn.underlined.bold(href='mailto: contato@romulobastos.com.br' rel='noreferrer' title='E-mail') #[span contato@romulobastos.com.br]
 		
 		.row
-			form.flex.gap-5.dir-col.center(name="contact" action="/en/success" method="POST" data-netlify="true")
+			form.flex.gap-5.dir-col.center(name="contact" action="/en/success" method="POST" data-netlify-recaptcha="true" data-netlify="true")
 				.flex.gap-5.flex-wrap
 					label
 						p Name
@@ -32,6 +32,7 @@ footer#contact
 					
 					label
 						div
+							div(data-netlify-recaptcha="true")
 							button.btn.btn-primary.bold.mt-5(type="submit")
 								i.mr-4.fa.fa-paper-plane-o
 								| Send message
