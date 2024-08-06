@@ -32,7 +32,7 @@ footer#contato
 					
 					label
 						div
-							div(data-netlify-recaptcha="true" required)
+							div(data-netlify-recaptcha="true")
 							button.btn.btn-primary.bold.mt-5(type="submit")
 								i.mr-4.fa.fa-paper-plane-o
 								| Enviar mensagem
@@ -40,3 +40,6 @@ footer#contato
 	.copyright
 		.row
 			p Rômulo Bastos &copy; Desde 2010 &mdash; Rio de Janeiro, Brasil
+
+script.
+	getElementById('g-recaptcha-response').setAttribute("required")
