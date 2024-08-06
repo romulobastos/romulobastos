@@ -2,7 +2,6 @@
 
 # Portffolio page
 
-**Rômulo Bastos**
-Rômulo Bastos | Web and application development
+**Rômulo Bastos** | Web and application development
 
 Visit the website: [romulobastos.com.br](https://romulobastos.com.br)
