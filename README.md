@@ -3,4 +3,6 @@
 # Portffolio page
 
 **Rômulo Bastos**
-Front-end developer & digital designer.
+Rômulo Bastos | Web and application development
+
+Visit the website: [romulobastos.com.br](https://romulobastos.com.br)
