@@ -1,6 +1,7 @@
 **Hey, I'm Rômulo Bastos!** 👋
+HCL Portal Analyst | Front-end Developer | UI/UX Designer | Branding Expert
 
-I'm a passionate Front-End Developer and UI Designer from Brazil 🇧🇷, currently working as a Tech Lead at [Ipiranga](https://portal.ipiranga/). I specialize in building modern web applications, particularly using React, Next.js, and Headless CMS platforms. I also have a strong background in branding and visual design, blending creativity with technology to deliver unique user experiences.
+I'm a passionate Front-End Developer and UI Designer from Brazil 🇧🇷, currently working as an HCL Portal Analyst. I specialize in building modern web applications, particularly using React, Next.js, and Headless CMS platforms. I also have a strong background in branding and visual design, blending creativity with technology to deliver unique user experiences.
 
 Check out some projects on [my personal website](https://romulobastos.com.br) ⚡️
 
