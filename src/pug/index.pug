@@ -1,5 +1,5 @@
 doctype
-html(lang="pt-br")
+html(lang='pt-br')
 	head
 		meta(charset='utf-8')
 		meta(name='description' content='Criação de landing pages, sites, portais, blogs e protótipos.')
@@ -14,7 +14,11 @@ html(lang="pt-br")
 		meta(property='og:description' content='Criação de landing pages, sites, portais, blogs e protótipos.')
 		
 		link(rel='stylesheet' href='../site/assets/css/styles.css')
-		link(rel='shortcut icon' type="image/png" href='../site/assets/images/favicon.svg')
+		link(rel='shortcut icon' type='image/png' href='../site/assets/images/favicon.svg')
+
+		link(rel='preconnect' href='https://fonts.googleapis.com')
+		link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+		link(href='https://fonts.googleapis.com/css2?family=Fira+Code:wght@400,700&display=swap' rel='stylesheet')
 		
 		include ./_partials/ga4
 
@@ -29,4 +33,4 @@ html(lang="pt-br")
 				include ./_pages/pt/home
 				include ./_partials/pt/footer
 
-		script(src="https://kit.fontawesome.com/6e569453ca.js" crossorigin="anonymous")
+		script(rel='preconnect' src='https://kit.fontawesome.com/6e569453ca.js' crossorigin='anonymous')
