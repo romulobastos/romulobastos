@@ -1,6 +1,6 @@
 ## Hey, I'm Rômulo Bastos! 👋
 
-**Front-End Engineer & UI/UX Designer | 12+ years of experience crafting efficient, accessible, and high-impact interfaces.**
+**Front-End Developer & UI/UX Designer | 12+ years of experience crafting efficient, accessible, and high-impact interfaces.**
 
 I'm passionate about transforming ideas into meaningful digital experiences. I believe in delivering real value and strive to create products that make a real difference.
 
