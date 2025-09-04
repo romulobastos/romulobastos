@@ -9,6 +9,7 @@ Thumbs.db
 *.map
 .sass-cache
 .tmp
+docs/*
 tmp/*
 temp
 index.html
