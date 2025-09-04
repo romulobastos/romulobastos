@@ -39,9 +39,11 @@ footer#contato
 								| Enviar mensagem
 
 	.copyright
-  	.row
-			- const currentYear = new Date().getFullYear()
-			p © 2010–#{currentYear} Rômulo Bastos · Rio de Janeiro, Brasil
+		.row
+			p © 2010–<span id="year"></span> Rômulo Bastos · Rio de Janeiro, Brasil
+			script.
+				const year = new Date().getFullYear?.() ?? 2025;
+				document.getElementById('year').textContent = year;
 
 script.
 	setTimeout(function(){ document.getElementById('g-recaptcha-response').setAttribute("required", "required") }, 2000)
