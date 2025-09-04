@@ -39,8 +39,9 @@ footer#contato
 								| Enviar mensagem
 
 	.copyright
-		.row
-			p Rômulo Bastos &copy; Desde 2010 &mdash; Rio de Janeiro, Brasil
+  	.row
+			- const currentYear = new Date().getFullYear()
+			p © 2010–#{currentYear} Rômulo Bastos · Rio de Janeiro, Brasil
 
 script.
 	setTimeout(function(){ document.getElementById('g-recaptcha-response').setAttribute("required", "required") }, 2000)
