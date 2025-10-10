@@ -1,10 +1,20 @@
 // buttons
 .btn
+	appearance: none
+	
+	display: inline-flex
+	flex-wrap: wrap
+	justify-content: center
+	align-items: center
+	height: auto
+	width: auto
+	font-size: 1.5rem
+	line-height: 2rem
+
 	position: relative
 	margin: 0
-	padding: 1rem 2rem
-	display: inline-block
-	text-align: center
+	padding: 1.4rem 2rem
+	
 	transition: all .6s ease
 	border-color: $separator
 	+radius(calc($gutter/6))
@@ -16,12 +26,12 @@
 		border-style: dashed
 		border-width: 2px
 		&:hover, &:focus
-			color: $secondary-lighten
+			color: $highlight
 			border-color: $gray
 
 	&:hover,
 	&:focus
-		color: $secondary-lighten
+		color: $blue-6
 		i, svg
 			+transform(scale(1.4) rotate(10deg))
 
@@ -36,25 +46,51 @@
 		transition: all .3s ease
 	
 	&.btn-bordered
-		border: 3px solid	$primary-lighten
+		border: 3px solid	$gray-5
 		
 	&.btn-block
 		display: block
 
+	*
+		position: relative
+		z-index: 1
+
 	&.btn-primary
-		background: $secondary linear-gradient(90deg, $secondary-lighten, $secondary)
+		position: relative
 		color: $white
+		font-weight: 500
+		border: none
+		cursor: pointer
+		overflow: hidden
+		background: $gradient-1
+		transition: all .6s ease
+		box-shadow: -15px -5px 30px rgba($purple-4, 0.3), 15px 5px 30px rgba($blue-6, 0.3)
+
+		&::before
+			content: ""
+			position: absolute
+			inset: 0
+			background: $gradient-2
+			opacity: 0
+			transition: opacity 1s ease
+			z-index: 0
+		
+		*
+			position: relative
+			z-index: 1
 
 		&:hover
-			background: lighten($secondary, 10%) linear-gradient(90deg, lighten($secondary-lighten, 10%), lighten($secondary, 10%))
+			box-shadow: -15px -5px 30px rgba($highlight, 0.2), 15px 5px 30px rgba($blue-6, 0.3)
+
+			&::before
+				opacity: 1
 
 	&.btn-underline
 		&::after
 			border: 0
 			border-bottom-width: 1px
 			border-style: solid
-			border-color: $primary-lighten
-			border-color: rgba(255, 255, 255, 0.1)
+			border-color: $gray-5
 			z-index: 1
 
 			&:hover, &:focus

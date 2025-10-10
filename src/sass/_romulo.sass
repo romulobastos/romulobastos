@@ -155,12 +155,15 @@ header
 			opacity: 0
 			
 			span
+				display: flex
+				align-items: center
+				justify-content: center
 				position: absolute
 				bottom: 48px
 				left: 65%
 				background: $silver
 				padding: 10px 12px
-				font-size: 1.8rem
+				font-size: 1.6rem
 				font-weight: 400
 				line-height: 2.4rem
 				opacity: 0
@@ -446,6 +449,8 @@ header
 			&.facts
 				grid-area: fac
 				animation-delay: 1.2s
+				li
+					margin-bottom: calc($gutter/4)
 			&.jobs
 				grid-area: job
 				animation-delay: 1.6s
@@ -532,15 +537,17 @@ header
 				a
 					&:hover,
 					&:focus
-						color: $secondary-lighten
+						background: $gray-1
+						color: $blue-6
 						.list-icon, .list-icon svg
-							color: $secondary-lighten
-							fill: $secondary-lighten
+							color: $blue-6
+							fill: $blue-6
 	
 	.category
+		color: $gray-5
 		&::before
 			// content: '-> '
-			color: $secondary-lighten
+			color: $blue-6
 	
 // footer
 footer
@@ -549,19 +556,7 @@ footer
 	text-align: center
 	.title
 		margin: 30px
-	.btn
-		font-size: 2.0rem
-		min-width: 20px
-		min-height: 20px
-		line-height: 1.6rem
-		// margin: 0px
-		padding: 20px
-		display: inline-block
-		+radius(calc($gutter/6))
-		transition: all ease 1s
-		span
-			font-size: 1.6rem
-
+	
 	.flex-wrap
 		flex-wrap: wrap
 		label
@@ -593,22 +588,22 @@ footer
 			-moz-appearance: none
 			appearance: none
 			margin: 0
-			padding: calc($gutter/2) calc($gutter/2)
+			padding: $gutter*0.4 $gutter*0.5
 			border-color: $separator
 			border-style: solid
 			border-width: 2px
-			min-height: 64px
+			line-height: 1.4rem
 			width: 100%
-			font-size: 1.6rem
+			font-size: 1.5em
 			+boxsizing(border-box)
 			+radius(calc($gutter/6))
 			+transition(.3s all)
 			&:hover, &:focus
 				outline: none
 			&:hover
-				border-color: $gray
+				border-color: $gray-5
 			&:focus
-				border-color: $secondary-lighten
+				border-color: $blue-6
 		textarea
 			height: calc($gutter*6)
 		button.btn
@@ -661,13 +656,6 @@ footer
 				li
 					margin: 10px 0
 	
-	footer
-		.btn
-			font-size: 2.2rem
-			line-height: 2rem
-			span
-				font-size: 2.0rem
-
 @media (max-width: 480px)
 	header
 		.heading
