@@ -7,7 +7,7 @@ html, body
 	font-style: normal
 	font-weight: 400
 	line-height: 3.6em
-	color: $primary
+	color: $gray-8
 	
 	*
 		font-family: 'Fira Code', sans-serif	
@@ -15,19 +15,20 @@ html, body
 h1, h2, h3, h4, h5, h6
 	margin: 0 0 1rem
 	font-weight: 700
-	color: $primary
+	color: $gray-8
+	letter-spacing: -0.1rem
 
 p, li, a
-	color: $primary
+	color: $gray-8
 	line-height: 1.8em
 
-p, li
+p
 	margin-bottom: calc($gutter/2)
 
 s
 	text-decoration: line-through
 abbr
-	border-bottom: 1px dashed $gray
+	border-bottom: 2px dotted $gray-5
 
 a
 	position: relative
@@ -40,7 +41,7 @@ a
 		&::after
 			content: ""
 			position: absolute
-			background: $separator
+			background: $gray-2
 			top: 100%
 			left: 5%
 			width: 90%
@@ -51,7 +52,7 @@ a
 		&:hover,
 		&:focus
 			&::after
-				background: $secondary-lighten
+				background: $gray-5
 				left: 0
 				width: 100%				
 
@@ -59,6 +60,8 @@ nav
 	ul
 		li
 			a
+				display: flex
+				padding: 0.75rem 0
 				&:hover,
 				&:focus
 					i, svg
@@ -67,12 +70,10 @@ nav
 
 h1
 	font-size: 4rem
-	color: $primary
 
 h2
 	font-size: 1.6rem
 	font-weight: 400
-	color: $primary
 
 h3
 	font-size: 2.4rem
@@ -82,12 +83,13 @@ h3
 		&::before
 			content: ""
 			position: absolute
-			background: $secondary-lighten
+			background: $gradient-1
 			top: 100%
 			left: 0
 			width: calc($gutter*2)
-			height: calc($gutter/5)
-			border-radius: calc($gutter/5)
+			height: calc($gutter*0.1)
+			// border-radius: calc($gutter/5)
+			// transform: rotate(90deg) translate(-$gutter*0.65, $gutter*1.5)
 
 		&.center
 			&::before
@@ -111,3 +113,16 @@ p, li, a
 
 strong, b, .bold
 	font-weight: 700
+
+@keyframes gradient-move
+	0%
+		background-position: 0% 50%
+	100%
+		background-position: 100% 50%
+
+.text-gradient
+	background: $gradient-loop
+	background-size: 50% auto
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+	animation: gradient-move 2s linear infinite
