@@ -429,7 +429,7 @@ header
 		margin-bottom: $gutter
 
 	.grid
-		grid-template: "wel fac" "job art"
+		grid-template: "job art" "wel fac"
 		grid-gap: $gutter
 		margin-bottom: $gutter
 		
@@ -505,7 +505,7 @@ header
 					border-radius: 100px
 
 		@media (max-width: 960px)
-			grid-template: "wel" "fac" "job" "art"
+			grid-template: "job" "art" "wel" "fac"
 			grid-gap: 0
 			.with-col-divisor,
 			.with-row-divisor
@@ -533,8 +533,11 @@ header
 			
 			li
 				display: block
+				border-bottom: 2px solid $gray-1
 				
 				a
+					align-items: center
+
 					&:hover,
 					&:focus
 						background: $gray-1
@@ -542,6 +545,19 @@ header
 						.list-icon, .list-icon svg
 							color: $blue-6
 							fill: $blue-6
+
+					div
+						display: flex
+						flex-direction: column
+						gap: 0
+						justify-content: center
+						line-height: 150%
+					
+					.badge-icon
+						font-size: 1.25rem
+						line-height: 100%
+						margin: 1rem
+						color: #FFbb00
 	
 	.category
 		color: $gray-5

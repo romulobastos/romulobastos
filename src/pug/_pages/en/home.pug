@@ -1,14 +1,24 @@
 .container
 	.main
 		.grid
-			.grid-item.welcome.with-col-divisor
+			//- projects
+			.grid-item.jobs.with-col-divisor
+				include includes/my-jobs
+
+			//- picture
+			.grid-item.art
+				.image(style='background-image:url(/img/profile-picture.webp)')
+
+			//- aboute me
+			.grid-item.welcome.with-col-divisor.with-row-divisor
 				h3.title About me
-				p Front-end developer and designer with over 12 years of experience. I combine technical expertise in React, Next.js, and Headless CMS with a creative vision focused on UI, branding, and visual design. Always aiming for the perfect balance between form and function.
+				p Front-end developer and designer with over 15 years of experience. I combine technical expertise in React, Next.js, and Headless CMS with a creative vision focused on UI, branding, and visual design. Always aiming for the perfect balance between form and function.
 				a.btn.btn-primary.bold.mt-5(href="#contact")
 					i.mr-4.far.fa-comments
 					span Start your project
 
-			.grid-item.facts
+			//- fun facts
+			.grid-item.facts.with-row-divisor
 				h3.title Fun facts
 				ul
 					li.flex.gap-1
@@ -35,9 +45,3 @@
 						span.list-icon
 							i.fa.fa-graduation-cap
 						span Completed #[a.bold.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') some courses]
-			
-			.grid-item.jobs.with-col-divisor.with-row-divisor
-				include includes/my-jobs
-
-			.grid-item.art.with-row-divisor
-				.image(style='background-image:url(/img/profile-picture.webp)')

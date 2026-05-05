@@ -1,14 +1,24 @@
 .container
 	.main
 		.grid
-			.grid-item.welcome.with-col-divisor
+			//- projects
+			.grid-item.jobs.with-col-divisor
+				include includes/my-jobs
+
+			//- picture
+			.grid-item.art
+				.image(style='background-image:url(/img/profile-picture.webp)')
+
+			//- aboute me
+			.grid-item.welcome.with-col-divisor.with-row-divisor
 				h3.title Sobre mim
-				p Desenvolvedor front-end e designer com mais de 12 anos de experiência. Combino conhecimento técnico em React, Next.js e Headless CMS com uma visão criativa voltada para UI, branding e design visual. Busco o equilíbrio entre forma e função para criar ótimas experiências.
+				p Desenvolvedor front-end e designer com mais de 15 anos de experiência. Combino conhecimento técnico em React, Next.js e Headless CMS com uma visão criativa voltada para UI, branding e design visual. Busco o equilíbrio entre forma e função para criar ótimas experiências.
 				a.btn.btn-primary.bold.mt-5(href="#contato")
 					i.mr-4.far.fa-comments
 					span Inicie seu projeto
 			
-			.grid-item.facts
+			//- fun facts
+			.grid-item.facts.with-row-divisor
 				h3.title Curiosidades
 				ul
 					li.flex.gap-1
@@ -35,9 +45,3 @@
 						span.list-icon
 							i.fa.fa-graduation-cap
 						span Finalizei #[a.bold.underlined(href='https://cursos.alura.com.br/user/romulobastos', rel='noreferrer' target='_blank') alguns cursos]
-			
-			.grid-item.jobs.with-col-divisor.with-row-divisor
-				include includes/my-jobs
-
-			.grid-item.art.with-row-divisor
-				.image(style='background-image:url(/img/profile-picture.webp)')
