@@ -409,11 +409,11 @@ header
 	font-size: .8em
 	display: inline-block
 	text-align: center
-	margin-left: $gutter
-	margin-right: calc(calc($gutter/2))
+	margin-left: calc($gutter/1.5)
+	margin-right: calc($gutter/2)
 	
 	@media (max-width: 960px)
-		margin-left: calc(calc($gutter/2))
+		margin-left: calc($gutter/2)
 		margin-right: calc($gutter/3)
 		
 	svg
@@ -533,10 +533,11 @@ header
 			
 			li
 				display: block
-				border-bottom: 2px solid $gray-1
+				// border-bottom: 2px solid $gray-1
 				
 				a
-					align-items: center
+					align-items: start
+					+radius(calc($gutter/4))
 
 					&:hover,
 					&:focus
