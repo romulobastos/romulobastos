@@ -1,53 +1,56 @@
 # Hey, I'm Rômulo Bastos ⚡
 
-**Senior Front-End Engineer & UI/UX Designer**  
-15+ years building scalable and high-performance web applications.
+Senior Front-End Engineer and UI Designer with 15+ years of experience building enterprise platforms, design systems, and high-performance web applications.
+
+Throughout my career, I've worked across agencies, enterprise environments, and product teams, helping companies deliver scalable digital experiences with a strong focus on usability, performance, and maintainability.
+
+Today, I specialize in React, Next.js, TypeScript, and modern front-end architecture, bridging the gap between design and development to create products that are both visually polished and technically robust.
+
+🏆 Business Value Award recipient (2022 & 2023)
 
 ---
 
-## 👨‍💻 About me
+## What I Do
 
-Senior Front-End Engineer focused on **enterprise platforms, UI engineering and design systems**.
-
-I work mainly with **React, Next.js, TypeScript and HCL DX**, building scalable interfaces with a strong focus on performance, usability and maintainability.
-
-Twice awarded the **Business Value Award (2022 & 2023)** for delivering impactful solutions in enterprise environments.
-
----
-
-## 🚀 Core Skills
-
-**Front-End**  
-React • Next.js • TypeScript • JavaScript • HTML • CSS • Tailwind • Sass • Git  
-
-**UI / UX**  
-Figma • Design Systems • Prototyping  
-
-**CMS & Integration**  
-HCL DX • WordPress • REST APIs  
-
-**Workflow**  
-Docker • Scrum • Agile environments  
+- Build scalable front-end applications with React and Next.js
+- Create and evolve design systems
+- Transform complex business requirements into intuitive user experiences
+- Collaborate closely with designers, product teams, and stakeholders
+- Improve performance, maintainability, and development workflows
 
 ---
 
-## 🧠 Highlights
+## Core Technologies
 
-- 15+ years in front-end development  
-- Enterprise experience with HCL DX / IBM WCM  
-- Performance optimization (up to -40% asset reduction)  
-- Front-end standardization in large-scale rebranding projects  
-- Experience across agency, enterprise and product environments  
+**Front-End**
+React · Next.js · TypeScript · JavaScript · HTML · CSS · Tailwind · Sass
+
+**Design & UX**
+Figma · Design Systems · Prototyping · UI Engineering
+
+**CMS & Enterprise Platforms**
+HCL Digital Experience (DX) · IBM WCM · WordPress · REST APIs
+
+**Workflow**
+Git · Docker · Agile · Scrum
 
 ---
 
-## 🏆 Recognition
+## Career Highlights
 
-- Business Value Award — Ipiranga (2022 & 2023)
+- 15+ years of professional experience
+- Enterprise portal development with HCL DX
+- Led front-end standardization initiatives during large-scale rebranding projects
+- Reduced front-end asset size by up to 40% through performance optimization efforts
+- Experience collaborating with agencies, enterprise teams, and product organizations
+- Awarded twice for delivering high-impact business solutions
 
 ---
 
-## 🌍 Links
+## Let's Connect
 
-- LinkedIn: https://www.linkedin.com/in/romulobastos/  
-- Portfolio: https://romulobastos.com.br
+🌐 Portfolio: https://romulobastos.com.br
+
+💼 LinkedIn: https://www.linkedin.com/in/romulobastos/
+
+📧 Contact: Available through LinkedIn
